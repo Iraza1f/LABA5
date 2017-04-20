@@ -4,6 +4,8 @@
 using namespace std;
 int main()
 {
+	ofstream f;
+	f.open("live.txt");
 	queue<int> que1;
 	queue<int> que2;
 	queue<int> que3;
@@ -82,21 +84,21 @@ int main()
 			}
 			else
 			{
-			que3 = que2;
-			cout << "Элементы второй очереди" << endl;
-			while (!que3.empty())
-			{
-				cout << que3.front() << " ";
-				que3.pop();
+				que3 = que2;
+				cout << "Элементы второй очереди" << endl;
+				while (!que3.empty())
+				{
+					cout << que3.front() << " ";
+					que3.pop();
+				}
+				cout << endl;
 			}
-			cout << endl;
-		break;
+			break;
 		case 7:
 			cout << "Сколько элементов убрать?" << endl;
 			cin >> x;
 			if (x < que1.size())
 			{
-
 				for (int i = 0; i < x; i++)
 					que1.pop();
 				while (!que2.empty())
@@ -118,6 +120,7 @@ int main()
 			if (que1.empty() == true)
 			{
 				cout << "Первая очередь пуста" << endl;
+				f << "Первая очередь пуста" << endl;
 			}
 			else
 			{
@@ -126,13 +129,16 @@ int main()
 				while (!que3.empty())
 				{
 					cout << que3.front() << " ";
+					f << que3.front() << " ";;
 					que3.pop();
 				}
 				cout << endl;
+				f << endl;
 			}
 			if (que2.empty() == true)
 			{
 				cout << "Вторая очередь пуста" << endl;
+				f << "Вторая очередь пуста" << endl;
 			}
 			else
 			{
@@ -141,18 +147,18 @@ int main()
 				while (!que3.empty())
 				{
 					cout << que3.front() << " ";
+					f << que3.front() << " ";
 					que3.pop();
 				}
 				cout << endl;
+				f << endl;
 			}
 			break;
 		default:
-		{
 				   cout << "Ошибка" << endl;
 				   break;
 		}
-		}
-		}
 	}
+	f.close();
 	cout<< "Программа завершена. Результат сохранен" << endl;
 }
