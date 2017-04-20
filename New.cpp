@@ -11,6 +11,7 @@ int main()
 {
 	queue<int> que1;
 	queue<int> que2;
+	queue<int> que3;
 	setlocale(LC_ALL, "Russian");
 	cout << "Нажмите n/ 1. чтобы внести элемент в первую очередь n/ 2. чтобы внести элемент во вторую очередь n/ 3. чтобы вытолкнуть элемент из первой очереди n/ 4. чтобы вытолкнуть элемент из второй очереди n/ 5. чтобы показать элементы первой очереди n/ 6. чтобы показать элементы второй очереди n/ 7. чтобы показать элементы очередей n/ 8. слияние " << endl;
 	int p1 = 0;
@@ -83,8 +84,20 @@ int main()
 		}
 		break;
 	case 5:
+		que3 = que1;
+		while (!que3.empty())
+		{
+			cout << que3.front() << " ";
+			que3.pop();
+		}
 		break;
 	case 6:
+		que3 = que2;
+		while (!que3.empty())
+		{
+			cout << que3.front() << " ";
+			que3.pop();
+		}
 		break;
 	case 7:
 		break;
