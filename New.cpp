@@ -1,9 +1,5 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <locale.h>
 #include <fstream> 
 #include <iostream> 
-#include <conio.h>
 #include <queue>
 using namespace std;
 int main()
@@ -41,7 +37,7 @@ int main()
 			system("cls");
 			if (que1.empty() == true)
 			{
-				cout << "Очередь пуста" << endl;
+				cout << "Первая очередь пуста" << endl;
 			}
 			else
 			{
@@ -53,7 +49,7 @@ int main()
 			system("cls");
 			if (que2.empty() == true)
 			{
-				cout << "Очередь пуста" << endl;
+				cout << "Вторая очередь пуста" << endl;
 			}
 			else
 			{
